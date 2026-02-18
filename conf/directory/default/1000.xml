@@ -1,0 +1,16 @@
+<include>
+  <user id="1000">
+    <params>
+      <param name="password" value="uncharted3"/> <!--SIP password-->
+      <param name="vm-password" value="8761"/>
+    </params>
+    <variables> <!--these variable are accessible in the channel-->
+      <variable name="accountcode" value="1000"/> <!--Use this in your dialplan for authorization and limits. Also, cdr_csv can use it for separate CDR files-->
+      <variable name="user_context" value="default"/> <!--magic variable: specifies the context, which translates to which dialplan will route outbound calls-->
+      <variable name="effective_caller_id_name" value="AbdulRauf Siddiqui"/> <!--magic variable: used for outbound caller ID name-->
+      <variable name="effective_caller_id_number" value="+923152526525"/> <!--magic variable: used for outbound caller ID name/number-->
+      <variable name="rtp_secure_media" value="mandatory:AES_CM_128_HMAC_SHA1_80"/>
+      <variable name="media_webrtc" value="true"/>
+    </variables>
+  </user>
+</include>
