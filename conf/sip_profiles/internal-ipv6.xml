@@ -89,7 +89,7 @@
         that the originator is using-->
     <!--<param name="disable-transcoding" value="true"/>-->
     <!-- Used for when phones respond to a challenged ACK with method INVITE in the hash -->
-    <!--<param name="NDLB-broken-auth-hash" value="true"/>-->
+    <param name="NDLB-broken-auth-hash" value="true"/>
     <!-- add a ;received="<ip>:<port>" to the contact when replying to register for nat handling -->
     <!--<param name="NDLB-received-in-nat-reg-contact" value="true"/>-->
     <param name="auth-calls" value="$${internal_auth_calls}"/>

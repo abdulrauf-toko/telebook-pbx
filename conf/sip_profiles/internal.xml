@@ -1,4 +1,5 @@
 <profile name="internal">
+<!-- <X-PRE-PROCESS cmd="include" data="internal/*.xml"/> -->
   <!--
       This is a sofia sip profile/user agent.  This will service exactly one ip and port.
       In FreeSWITCH you can run multiple sip user agents on their own ip and port.
@@ -15,6 +16,21 @@
   </aliases>
   <!-- Outbound Registrations -->
   <gateways>
+  <include>
+  <gateway name="tokolab_trunk">
+    <param name="proxy" value="10.200.173.37"/>
+    <param name="register" value="false"/>
+    <param name="username" value="2138722005"/>
+    <param name="from-user" value="2138722005"/>
+    <param name="from-domain" value="10.200.173.37"/>
+    <param name="context" value="TOKOLABST"/>
+    <param name="dtmf-type" value="rfc2833"/>
+    <param name="extension-in-contact" value="true"/>
+    <param name="caller-id-in-from" value="true"/>
+    <param name="contact-params" value="tport=5060"/>
+  </gateway>
+</include>
+
   </gateways>
 
   <domains>
@@ -107,7 +123,7 @@
     <!-- extended info parsing -->
     <!-- <param name="extended-info-parsing" value="true"/> -->
 
-    <!--<param name="aggressive-nat-detection" value="true"/>-->
+    <param name="aggressive-nat-detection" value="true"/>
     <!--
         There are known issues (asserts and segfaults) when 100rel is enabled.
         It is not recommended to enable 100rel at this time.
@@ -184,7 +200,7 @@
     <!--<param name="bind-params" value="transport=udp"/>-->
     <!--<param name="unregister-on-options-fail" value="true"/>-->
     <!-- Send an OPTIONS packet to all registered endpoints -->
-    <!--<param name="all-reg-options-ping" value="true"/>-->
+    <param name="all-reg-options-ping" value="true"/>
     <!-- Send an OPTIONS packet to NATed registered endpoints. Can be 'true' or 'udp-only'. -->
     <!--<param name="nat-options-ping" value="true"/>-->
     <!--<param name="sip-options-respond-503-on-busy" value="true"/>-->
@@ -273,9 +289,9 @@
     <!-- Disable Register -->
     <!--<param name="disable-register" value="true"/> -->
     <!-- Used for when phones respond to a challenged ACK with method INVITE in the hash -->
-    <!--<param name="NDLB-broken-auth-hash" value="true"/>-->
+    <param name="NDLB-broken-auth-hash" value="true"/>
     <!-- add a ;received="<ip>:<port>" to the contact when replying to register for nat handling -->
-    <!--<param name="NDLB-received-in-nat-reg-contact" value="true"/>-->
+    <param name="NDLB-received-in-nat-reg-contact" value="true"/>
     <param name="auth-calls" value="$${internal_auth_calls}"/>
     <!-- Force subscription requests to require authentication -->
     <param name="auth-subscriptions" value="true"/>
@@ -350,7 +366,7 @@
     <!--<param name="enable-3pcc" value="true"/>-->
 
     <!-- use at your own risk or if you know what this does.-->
-    <!--<param name="NDLB-force-rport" value="true"/>-->
+    <param name="NDLB-force-rport" value="true"/>
     <!--
         Choose the realm challenge key. Default is auto_to if not set.
 

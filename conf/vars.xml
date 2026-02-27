@@ -241,8 +241,8 @@
        127 - BV32
 
   -->
-  <X-PRE-PROCESS cmd="set" data="global_codec_prefs=OPUS,G722,PCMU,PCMA,H264,VP8"/>
-  <X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=OPUS,G722,PCMU,PCMA,H264,VP8"/>
+  <X-PRE-PROCESS cmd="set" data="global_codec_prefs=PCMU,PCMA"/>
+  <X-PRE-PROCESS cmd="set" data="outbound_codec_prefs=PCMU,PCMA"/>
 
   <!--
       xmpp_client_profile and xmpp_server_profile
@@ -283,7 +283,7 @@
        If unspecified, the bind_server_ip value is used.
        Used by: sofia.conf.xml dingaling.conf.xml
   -->
-  <X-PRE-PROCESS cmd="stun-set" data="external_rtp_ip=stun:stun.freeswitch.org"/>
+	  <!-- <X-PRE-PROCESS cmd="stun-set" data="external_rtp_ip=stun:stun.freeswitch.org"/> -->
 
   <!-- external_sip_ip
       Used as the public IP address for SDP.
@@ -296,8 +296,9 @@
        If unspecified, the bind_server_ip value is used.
        Used by: sofia.conf.xml dingaling.conf.xml
   -->
-  <X-PRE-PROCESS cmd="stun-set" data="external_sip_ip=stun:stun.freeswitch.org"/>
-
+			  <!-- <X-PRE-PROCESS cmd="stun-set" data="external_sip_ip=stun:stun.freeswitch.org"/> -->
+<X-PRE-PROCESS cmd="set" data="external_rtp_ip=172.20.6.194"/>
+<X-PRE-PROCESS cmd="set" data="external_sip_ip=172.20.6.194"/>
   <!-- unroll-loops
        Used to turn on sip loopback unrolling.
   -->
@@ -308,8 +309,10 @@
        Used by: conference.conf.xml and user directory for default
        outbound callerid name and number.
   -->
-  <X-PRE-PROCESS cmd="set" data="outbound_caller_name=FreeSWITCH"/>
-  <X-PRE-PROCESS cmd="set" data="outbound_caller_id=0000000000"/>
+  <!-- <X-PRE-PROCESS cmd="set" data="outbound_caller_name=FreeSWITCH"/>
+  <X-PRE-PROCESS cmd="set" data="outbound_caller_id=0000000000"/> -->
+  <X-PRE-PROCESS cmd="set" data="outbound_caller_name=TOKOLABST"/>
+<X-PRE-PROCESS cmd="set" data="outbound_caller_id=2138722005"/>
 
   <!-- various debug and defaults -->
   <X-PRE-PROCESS cmd="set" data="call_debug=false"/>

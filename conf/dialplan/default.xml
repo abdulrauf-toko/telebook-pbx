@@ -685,6 +685,14 @@
       </condition>
     </extension>
 
+    <extension name="fiber_outbound">
+  <condition field="destination_number" expression="^(\d{10})$">
+    <action application="set" data="effective_caller_id_name=$${outbound_caller_name}"/>
+    <action application="set" data="effective_caller_id_number=$${outbound_caller_id}"/>
+    <action application="bridge" data="sofia/gateway/TOKOLABST/$1"/>
+  </condition>
+</extension>
+
     <extension name="show_info">
       <condition field="destination_number" expression="^9192$">
 	<action application="answer"/>
