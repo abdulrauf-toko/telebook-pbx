@@ -92,5 +92,6 @@
     <param name="tls-verify-in-subjects" value=""/>
     <!-- TLS version ("sslv23" (default), "tlsv1"). NOTE: Phones may not work with TLSv1 -->
     <param name="tls-version" value="$${sip_tls_version}"/>
+    <param name="stun-enabled" value="false"/>
   </settings>
 </profile>

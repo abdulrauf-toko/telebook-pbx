@@ -20,6 +20,17 @@
       </condition>
     </extension>
 
+     <extension name="mobile_echo">
+    <condition field="destination_number" expression="^2138722005$">
+      <action application="set" data="effective_caller_id_number=2138722005"/>
+      <action application="set" data="effective_caller_id_name=TOKOLAB"/>
+      <action application="set" data="origination_caller_id_number=2138722005"/>
+      <action application="answer"/>
+      <action application="playback" data="tone_stream://%(1000,1000,440)"/>
+      <action application="echo"/>
+    </condition>
+  </extension>
+
     <!-- Example of doing things based on time of day.
 
 	 year = 4 digit year. Example year="2009"

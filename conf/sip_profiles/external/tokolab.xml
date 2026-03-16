@@ -1,0 +1,14 @@
+<include>
+  <gateway name="tokolab_trunk">
+    <param name="proxy" value="10.200.173.37"/>
+    <param name="register" value="false"/>
+    <param name="username" value="2138722005"/>
+    <param name="from-user" value="2138722005"/>
+    <param name="from-domain" value="10.200.173.37"/>
+    <param name="context" value="TOKOLABST"/>
+    <param name="dtmf-type" value="rfc2833"/>
+    <param name="extension-in-contact" value="true"/>
+    <param name="caller-id-in-from" value="true"/>
+    <param name="contact-params" value="tport=5060"/>
+  </gateway>
+</include>

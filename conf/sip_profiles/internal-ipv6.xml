@@ -128,6 +128,6 @@
     <!-- the following can be used as workaround with bogus SRV/NAPTR records -->
     <!--<param name="disable-srv" value="false" />-->
     <!--<param name="disable-naptr" value="false" />-->
-
+    <param name="stun-enabled" value="false"/>
   </settings>
 </profile>

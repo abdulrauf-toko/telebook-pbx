@@ -8,9 +8,13 @@
       <variable name="accountcode" value="1001"/> <!--Use this in your dialplan for authorization and limits. Also, cdr_csv can use it for separate CDR files-->
       <variable name="user_context" value="default"/> <!--magic variable: specifies the context, which translates to which dialplan will route outbound calls-->
       <variable name="effective_caller_id_name" value="Hassan Haq"/> <!--magic variable: used for outbound caller ID name-->
-      <variable name="effective_caller_id_number" value="+1234567832"/> <!--magic variable: used for outbound caller ID name/number-->
+      <variable name="effective_caller_id_number" value="+923152526526"/> <!--magic variable: used for outbound caller ID name/number-->
       <variable name="rtp_secure_media" value="mandatory:AES_CM_128_HMAC_SHA1_80"/>
+      <!-- <variable name="rtp_secure_media" value="true"/> -->
       <variable name="media_webrtc" value="true"/>
+      <!-- <param name="rtp-ip" value="172.16.17.123"/> -->
+      <param name="sip-force-contact" value="ndlb-connectile-dysfunction"/>
+      <variable name="register-transport" value="wss"/>
     </variables>
   </user>
 </include>

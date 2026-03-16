@@ -8,7 +8,7 @@
 
     <!-- Multi-Faceted -->
     <!-- mod_enum is a dialplan interface, an application interface and an api command interface -->
-    <load module="mod_enum"/>
+    <!-- <load module="mod_enum"/> -->
 
     <!-- XML Interfaces -->
     <!-- <load module="mod_xml_rpc"/> -->
@@ -43,7 +43,7 @@
     <load module="mod_verto"/>
 
     <!-- Applications -->
-    <load module="mod_signalwire"/>
+    <!-- <load module="mod_signalwire"/> -->
     <load module="mod_commands"/>
     <load module="mod_conference"/>
     <!-- <load module="mod_curl"/> -->

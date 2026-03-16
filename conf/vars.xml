@@ -12,7 +12,7 @@
 
        WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING WARNING
   -->
-  <X-PRE-PROCESS cmd="set" data="default_password=1234"/>
+  <X-PRE-PROCESS cmd="set" data="default_password=Udhaarbook12345"/>
   <!-- Did you change it yet? -->
   <!--
       The following variables are set dynamically - calculated if possible by freeswitch - and
@@ -58,6 +58,8 @@
       affect the sip authentication.  Please review conf/directory/default.xml for more
       information on this topic.
   -->
+  <!-- <X-PRE-PROCESS cmd="set" data="local_ip_v4=172.16.17.125"/> -->
+  <X-PRE-PROCESS cmd="set" data="local_ip_v4=172.20.6.194"/>
   <X-PRE-PROCESS cmd="set" data="domain=$${local_ip_v4}"/>
   <X-PRE-PROCESS cmd="set" data="domain_name=$${domain}"/>
   <X-PRE-PROCESS cmd="set" data="hold_music=local_stream://moh"/>
@@ -265,7 +267,7 @@
        use different addresses where this variable appears.
        Used by: dingaling.conf.xml
   -->
-  <X-PRE-PROCESS cmd="set" data="bind_server_ip=auto"/>
+  <X-PRE-PROCESS cmd="set" data="bind_server_ip=172.16.17.125"/>
 
   <!-- NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE NOTICE
 
@@ -297,8 +299,10 @@
        Used by: sofia.conf.xml dingaling.conf.xml
   -->
 			  <!-- <X-PRE-PROCESS cmd="stun-set" data="external_sip_ip=stun:stun.freeswitch.org"/> -->
-<X-PRE-PROCESS cmd="set" data="external_rtp_ip=172.20.6.194"/>
-<X-PRE-PROCESS cmd="set" data="external_sip_ip=172.20.6.194"/>
+<X-PRE-PROCESS cmd="set" data="external_rtp_ip=$${local_ip_v4}"/>
+<X-PRE-PROCESS cmd="set" data="external_sip_ip=$${local_ip_v4}"/>
+<!-- <X-PRE-PROCESS cmd="set" data="external_rtp_ip=185.65.23.1"/>
+<X-PRE-PROCESS cmd="set" data="external_sip_ip=185.65.23.1"/> -->
   <!-- unroll-loops
        Used to turn on sip loopback unrolling.
   -->
@@ -407,14 +411,14 @@
 
   <!-- Internal SIP Profile -->
   <X-PRE-PROCESS cmd="set" data="internal_auth_calls=true"/>
-  <X-PRE-PROCESS cmd="set" data="internal_sip_port=5060"/>
-  <X-PRE-PROCESS cmd="set" data="internal_tls_port=5061"/>
+  <X-PRE-PROCESS cmd="set" data="internal_sip_port=5080"/>
+  <X-PRE-PROCESS cmd="set" data="internal_tls_port=5081"/>
   <X-PRE-PROCESS cmd="set" data="internal_ssl_enable=false"/>
 
   <!-- External SIP Profile -->
   <X-PRE-PROCESS cmd="set" data="external_auth_calls=false"/>
-  <X-PRE-PROCESS cmd="set" data="external_sip_port=5080"/>
-  <X-PRE-PROCESS cmd="set" data="external_tls_port=5081"/>
+  <X-PRE-PROCESS cmd="set" data="external_sip_port=5060"/>
+  <X-PRE-PROCESS cmd="set" data="external_tls_port=5061"/>
   <X-PRE-PROCESS cmd="set" data="external_ssl_enable=false"/>
 
   <!-- Video Settings -->
@@ -432,5 +436,11 @@
   <!-- Stock Video Avatars -->
   <X-PRE-PROCESS cmd="set" data="video_mute_png=$${images_dir}/default-mute.png"/>
   <X-PRE-PROCESS cmd="set" data="video_no_avatar_png=$${images_dir}/default-avatar.png"/>
+
+  <X-PRE-PROCESS cmd="set" data="rtp_start_port=16384"/>
+  <X-PRE-PROCESS cmd="set" data="rtp_end_port=32768"/>
+
+  <X-PRE-PROCESS cmd="set" data="rtp_timer_name=soft"/>
+<X-PRE-PROCESS cmd="set" data="enable_timer=false"/>
 
 </include>

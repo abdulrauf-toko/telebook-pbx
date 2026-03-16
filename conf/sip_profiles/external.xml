@@ -22,12 +22,13 @@
     <!-- <param name="shutdown-on-fail" value="true"/> -->
     <param name="sip-trace" value="no"/>
     <param name="sip-capture" value="no"/>
+    <param name="stun-enabled" value="false"/>
     <param name="rfc2833-pt" value="101"/>
     <!-- RFC 5626 : Send reg-id and sip.instance -->
     <!--<param name="enable-rfc-5626" value="true"/> -->
-    <param name="sip-port" value="$${external_sip_port}"/>
+    <!-- <param name="sip-port" value="$${external_sip_port}"/> -->
     <param name="dialplan" value="XML"/>
-    <param name="context" value="public"/>
+    <param name="context" value="default"/>
     <param name="dtmf-duration" value="2000"/>
     <param name="inbound-codec-prefs" value="$${global_codec_prefs}"/>
     <param name="outbound-codec-prefs" value="$${outbound_codec_prefs}"/>
@@ -60,12 +61,29 @@
     <!--
         DO NOT USE HOSTNAMES, ONLY IP ADDRESSES IN THESE SETTINGS!
     -->
-    <param name="rtp-ip" value="$${local_ip_v4}"/>
-    <param name="sip-ip" value="$${local_ip_v4}"/>
-    <param name="ext-rtp-ip" value="$${external_rtp_ip}"/>
-    <param name="ext-sip-ip" value="$${external_sip_ip}"/>
+    <!-- <param name="rtp-ip" value="$${local_ip_v4}"/>
+    <param name="sip-ip" value="$${local_ip_v4}"/> -->
+    <param name="sip-ip" value="172.20.6.194"/>
+    <param name="rtp-ip" value="172.20.6.194"/>
+    <param name="sip-port" value="5060"/>
+    <param name="ext-rtp-ip" value="172.20.6.194"/>
+    <param name="ext-sip-ip" value="172.20.6.194"/>
     <param name="rtp-timeout-sec" value="300"/>
     <param name="rtp-hold-timeout-sec" value="1800"/>
+<param name="NDLB-broken-auth-hash" value="true"/>
+<param name="rtp-rewrite-ssrc" value="false"/>
+<param name="rtp_secure_media" value="false"/>
+<param name="liberal-dtmf" value="true"/>
+<param name="enable-timer" value="false"/> 
+<param name="rtp-timer-name" value="soft"/>
+<param name="inbound-late-negotiation" value="true"/>
+<param name="inbound-zrtp-passthru" value="true"/>
+<param name="rtp-autofix-timing" value="true"/>
+<param name="rtp-autofit-interval" value="true"/>
+<param name="NDLB-force-rport" value="false"/>
+<param name="aggressive-nat-detection" value="false"/>
+    
+<!-- <param name="apply-candidate-acl" value="lan"/> -->
     <!--<param name="enable-3pcc" value="true"/>-->
 
     <!-- TLS: disabled by default, set to "true" to enable -->
@@ -93,5 +111,6 @@
     <param name="tls-version" value="$${sip_tls_version}"/>
     <!-- TLS ciphers default: ALL:!ADH:!LOW:!EXP:!MD5:@STRENGTH -->
     <param name="tls-ciphers" value="$${sip_tls_ciphers}"/>
+    <!-- <param name="stun-enabled" value="false"/> -->
   </settings>
 </profile>
