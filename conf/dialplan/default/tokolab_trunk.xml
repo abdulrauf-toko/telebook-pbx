@@ -4,6 +4,10 @@
       <action application="set" data="effective_caller_id_number=2138722005"/>
       <action application="set" data="effective_caller_id_name=TOKOLAB"/>
       <action application="set" data="origination_caller_id_number=2138722005"/>
+      <action application="set" data="sip_route_uri=sip:10.200.173.37"/>
+      <action application="set" data="disable_rtp_auto_adjust=true"/>
+      <action application="set" data="rtp_ip=10.200.173.37"/>
+      <action application="set" data="sip_sticky_contact=false"/>
     </condition>
   </extension>
 
@@ -14,6 +18,9 @@
       <action application="set" data="origination_caller_id_number=2138722005"/>
       <action application="answer"/>
       <action application="playback" data="tone_stream://%(1000,1000,440)"/>
+      <action application="set" data="sip_route_uri=sip:10.200.173.37"/>
+      <action application="set" data="disable_rtp_auto_adjust=true"/>
+      <action application="set" data="rtp_ip=10.200.173.37"/>  <!-- Or 172.21.21.37 if that's the proxy -->
       <action application="echo"/>
     </condition>
   </extension>

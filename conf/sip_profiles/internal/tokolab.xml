@@ -1,6 +1,6 @@
 <include>
   <gateway name="tokolab_trunk">
-    <!-- <param name="proxy" value="10.200.173.37"/> -->
+    <param name="proxy" value="10.200.173.37"/>
     <param name="register" value="false"/>
     <param name="context" value="TOKOLABST"/>
     <param name="dtmf-type" value="rfc2833"/>

@@ -2,7 +2,24 @@
   <!-- http://wiki.freeswitch.org/wiki/Sofia_Configuration_Files -->
   <!-- This profile is only for outbound registrations to providers -->
   <gateways>
-    <X-PRE-PROCESS cmd="include" data="external/*.xml"/>
+    <!-- <X-PRE-PROCESS cmd="include" data="external/*.xml"/> -->
+    <gateway name="tokolab_trunk">
+    <param name="proxy" value="10.200.173.37"/>
+    <param name="media-proxy" value="10.200.173.37:5060"/>
+    <param name="proxy-media-ip" value="10.200.173.37"/>
+    <param name="sip-force-contact" value="sip:2138722005@10.200.173.37:5060"/>
+    <param name="register" value="false"/>
+    <param name="register-proxy" value="10.200.173.37"/>
+    <param name="outbound-proxy" value="10.200.173.37"/>
+    <param name="username" value="2138722005"/>
+    <param name="from-user" value="2138722005"/>
+    <param name="from-domain" value="10.200.173.37"/>
+    <param name="context" value="default"/>
+    <param name="dtmf-type" value="rfc2833"/>
+    <param name="extension-in-contact" value="true"/>
+    <param name="caller-id-in-from" value="true"/>
+    <param name="contact-params" value="tport=5060"/>
+  </gateway>
   </gateways>
 
   <aliases>
@@ -68,8 +85,8 @@
     <param name="sip-port" value="5060"/>
     <param name="ext-rtp-ip" value="172.20.6.194"/>
     <param name="ext-sip-ip" value="172.20.6.194"/>
-    <param name="rtp-timeout-sec" value="300"/>
-    <param name="rtp-hold-timeout-sec" value="1800"/>
+    <param name="media_timeout" value="300"/>
+    <param name="media_hold_timeout" value="1800"/>
 <param name="NDLB-broken-auth-hash" value="true"/>
 <param name="rtp-rewrite-ssrc" value="false"/>
 <param name="rtp_secure_media" value="false"/>
@@ -78,11 +95,18 @@
 <param name="rtp-timer-name" value="soft"/>
 <param name="inbound-late-negotiation" value="true"/>
 <param name="inbound-zrtp-passthru" value="true"/>
-<param name="rtp-autofix-timing" value="true"/>
+<param name="rtp-autofix-timing" value="False"/>
 <param name="rtp-autofit-interval" value="true"/>
-<param name="NDLB-force-rport" value="false"/>
+<param name="NDLB-force-rport" value="true"/>
 <param name="aggressive-nat-detection" value="false"/>
-    
+    <!-- Force audio/media through proxy server -->
+    <param name="force-proxy-media" value="true"/>
+    <!-- Rewrite SDP c= line to use our proxy IP -->
+    <param name="proxy-media" value="true"/>
+    <!-- Force media through registered proxy -->
+    <param name="proxy-via-params" value="true"/>
+    <param name="NDLB-connectile-dysfunction" value="true"/>
+    <param name="rtp-symmetric" value="false"/>
 <!-- <param name="apply-candidate-acl" value="lan"/> -->
     <!--<param name="enable-3pcc" value="true"/>-->
 

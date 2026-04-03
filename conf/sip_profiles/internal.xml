@@ -15,8 +15,8 @@
     -->
   </aliases>
   <!-- Outbound Registrations -->
-  <gateways>
-  <include>
+  <!-- <include> -->
+  <!-- <gateways> -->
   <!-- <gateway name="tokolab_trunk">
     <param name="proxy" value="10.200.173.37"/>
     <param name="register" value="false"/>
@@ -29,9 +29,21 @@
     <param name="caller-id-in-from" value="true"/>
     <param name="contact-params" value="tport=5060"/>
   </gateway> -->
-</include>
+  <!-- <gateway name="tokolab_trunk">
+    <param name="proxy" value="10.200.173.37"/>
+    <param name="register" value="false"/>
+    <param name="username" value="2138722005"/>
+    <param name="from-user" value="2138722005"/>
+    <param name="from-domain" value="10.200.173.37"/>
+    <param name="context" value="TOKOLABST"/>
+    <param name="dtmf-type" value="rfc2833"/>
+    <param name="extension-in-contact" value="true"/>
+    <param name="caller-id-in-from" value="true"/>
+    <param name="contact-params" value="tport=5060"/>
+  </gateway>
+  </gateways> -->
+<!-- </include> -->
 
-  </gateways>
 
   <domains>
     <!-- indicator to parse the directory for domains with parse="true" to get gateways-->
@@ -331,8 +343,8 @@
     
 
     <!-- rtp inactivity timeout -->
-    <param name="rtp-timeout-sec" value="300"/>
-    <param name="rtp-hold-timeout-sec" value="1800"/>
+    <param name="media_timeout" value="300"/>
+    <param name="media_hold_timeout" value="1800"/>
     <!-- VAD choose one (out is a good choice); -->
     <!-- <param name="vad" value="in"/> -->
     <!-- <param name="vad" value="out"/> -->
@@ -388,7 +400,7 @@
     <!--<param name="enable-3pcc" value="true"/>-->
 
     <!-- use at your own risk or if you know what this does.-->
-    <param name="NDLB-force-rport" value="true"/>
+    <!-- <param name="NDLB-force-rport" value="true"/> -->
     <!--
         Choose the realm challenge key. Default is auto_to if not set.
 
