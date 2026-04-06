@@ -2,24 +2,22 @@
   <!-- http://wiki.freeswitch.org/wiki/Sofia_Configuration_Files -->
   <!-- This profile is only for outbound registrations to providers -->
   <gateways>
-    <!-- <X-PRE-PROCESS cmd="include" data="external/*.xml"/> -->
     <gateway name="tokolab_trunk">
-    <param name="proxy" value="10.200.173.37"/>
-    <param name="media-proxy" value="10.200.173.37:5060"/>
-    <param name="proxy-media-ip" value="10.200.173.37"/>
-    <param name="sip-force-contact" value="sip:2138722005@10.200.173.37:5060"/>
-    <param name="register" value="false"/>
-    <param name="register-proxy" value="10.200.173.37"/>
-    <param name="outbound-proxy" value="10.200.173.37"/>
-    <param name="username" value="2138722005"/>
-    <param name="from-user" value="2138722005"/>
-    <param name="from-domain" value="10.200.173.37"/>
-    <param name="context" value="default"/>
-    <param name="dtmf-type" value="rfc2833"/>
-    <param name="extension-in-contact" value="true"/>
-    <param name="caller-id-in-from" value="true"/>
-    <param name="contact-params" value="tport=5060"/>
-  </gateway>
+      <param name="proxy" value="10.200.173.37"/>
+      <param name="register" value="false"/>
+      <param name="username" value="2138722005"/>
+      <param name="from-user" value="2138722005"/>
+      <param name="from-domain" value="10.200.173.37"/>
+      <param name="context" value="default"/>
+      <param name="dtmf-type" value="rfc2833"/>
+      <param name="caller-id-in-from" value="true"/>
+      <param name="codec-prefs" value="PCMU,PCMA"/>
+      <param name="sticky-contact" value="true"/>
+      <param name="media-address" value="10.200.173.37"/>
+      <param name="rtp-ip" value="172.20.6.194"/>
+      <param name="outbound-proxy" value="10.200.173.37"/>
+      <param name="sip-force-contact" value="NDLB-connectile-dysfunction"/>
+    </gateway>
   </gateways>
 
   <aliases>
@@ -74,7 +72,6 @@
     <param name="inbound-codec-negotiation" value="generous"/>
     <param name="nonce-ttl" value="60"/>
     <param name="auth-calls" value="false"/>
-    <param name="inbound-late-negotiation" value="true"/>
     <!--
         DO NOT USE HOSTNAMES, ONLY IP ADDRESSES IN THESE SETTINGS!
     -->
@@ -93,7 +90,6 @@
 <param name="liberal-dtmf" value="true"/>
 <param name="enable-timer" value="false"/> 
 <param name="rtp-timer-name" value="soft"/>
-<param name="inbound-late-negotiation" value="true"/>
 <param name="inbound-zrtp-passthru" value="true"/>
 <param name="rtp-autofix-timing" value="False"/>
 <param name="rtp-autofit-interval" value="true"/>
@@ -107,6 +103,7 @@
     <param name="proxy-via-params" value="true"/>
     <param name="NDLB-connectile-dysfunction" value="true"/>
     <param name="rtp-symmetric" value="false"/>
+    <param name="sip_sticky_contact" value="true"/>
 <!-- <param name="apply-candidate-acl" value="lan"/> -->
     <!--<param name="enable-3pcc" value="true"/>-->
 

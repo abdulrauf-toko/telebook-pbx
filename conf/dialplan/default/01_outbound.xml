@@ -1,8 +1,0 @@
-<include>
-  <extension name="outgoing_calls">
-    <condition field="destination_number" expression="^(\d{10})$">
-      <action application="set" data="caller_id_number=2138722005"/>
-      <action application="bridge" data="sofia/gateway/tokolab_trunk/$1"/>
-    </condition>
-  </extension>
-</include>
