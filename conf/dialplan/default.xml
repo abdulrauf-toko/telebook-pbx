@@ -18,6 +18,7 @@
       <action application="set" data="nolocal:sip_sticky_contact=true"/>
       <action application="export" data="nolocal:sip_sticky_contact=true"/>
       <action application="set" data="rtp_adv_audio_ip=10.200.173.37"/>
+      <action application="set" data="disable_rtp_auto_adjust=true"/>
       <!-- <action application="set" data="absolute_codec_string=PCMU,PCMA"/> -->
       <!-- <action application="answer"/> -->
       <!-- <action application="set" data="rtp_patch_media_ip=10.200.173.37"/> -->
