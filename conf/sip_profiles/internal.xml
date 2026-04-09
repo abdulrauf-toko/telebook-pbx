@@ -121,8 +121,8 @@
     <!-- <param name="rtp-ip" value="$${local_ip_v4}"/> -->
     <!-- ip address to bind to, DO NOT USE HOSTNAMES ONLY IP ADDRESSES -->
     <!-- <param name="sip-ip" value="$${local_ip_v4}"/> -->
-    <param name="sip-ip" value="$${local_ip_v4}"/> 
-    <param name="rtp-ip" value="$${local_ip_v4}"/>
+    <param name="sip-ip" value="$${lan_ip}"/> 
+    <param name="rtp-ip" value="$${lan_ip}"/>
     <param name="hold-music" value="$${hold_music}"/>
     <!-- <param name="apply-nat-acl" value="nat.auto"/> -->
     <!-- <param name="auto-nat" value="true"/> -->
@@ -362,11 +362,11 @@
 
 
     <!-- for sip over websocket support -->
-    <param name="ws-binding"  value="$${local_ip_v4}:5066"/>
+    <param name="ws-binding"  value="$${lan_ip}:5066"/>
 
     <!-- for sip over secure websocket support -->
     <!-- You need wss.pem in $${certs_dir} for wss or one will be created for you -->
-    <param name="wss-binding" value="$${local_ip_v4}:7443"/>
+    <param name="wss-binding" value="$${lan_ip}:7443"/>
 
     <!--<param name="delete-subs-on-register" value="false"/>-->
 
