@@ -9,6 +9,24 @@
 
   <!-- http://wiki.freeswitch.org/wiki/Sofia_Configuration_Files -->
   <!--aliases are other names that will work as a valid profile name for this profile-->
+  <gateways>
+    <gateway name="tokolab_trunk">
+      <param name="proxy" value="10.200.173.37"/>
+      <param name="register" value="false"/>
+      <param name="username" value="2138722005"/>
+      <param name="from-user" value="2138722005"/>
+      <param name="from-domain" value="10.200.173.37"/>
+      <param name="context" value="default"/>
+      <param name="dtmf-type" value="rfc2833"/>
+      <param name="caller-id-in-from" value="true"/>
+      <param name="codec-prefs" value="PCMU,PCMA"/>
+      <param name="sticky-contact" value="true"/>
+      <param name="media-address" value="10.200.173.37"/>
+      <param name="rtp-ip" value="172.20.6.194"/>
+      <param name="outbound-proxy" value="10.200.173.37"/>
+      <param name="sip-force-contact" value="NDLB-connectile-dysfunction"/>
+    </gateway>
+  </gateways>
   <aliases>
     <!--
         <alias name="default"/>
@@ -197,6 +215,7 @@
     <!--<param name="multiple-registrations" value="contact"/>-->
     <!--set to 'greedy' if you want your codec list to take precedence -->
     <param name="inbound-codec-negotiation" value="generous"/>
+    <param name="inbound-late-negotiation" value="true"/>
     <!-- if you want to send any special bind params of your own -->
     <!--<param name="bind-params" value="transport=udp"/>-->
     <!--<param name="unregister-on-options-fail" value="true"/>-->
@@ -260,11 +279,11 @@
     <!--<param name="db-spin-up-wait-ms" value="1000" />-->
 
     <!--Uncomment to set all inbound calls to no media mode-->
-    <!--<param name="inbound-bypass-media" value="true"/>-->
+    <param name="inbound-bypass-media" value="true"/>
 
     <!--Uncomment to set all inbound calls to proxy media mode-->
-    <param name="inbound-proxy-media" value="true"/>
-    <param name="proxy-media" value="true"/>
+    <param name="inbound-proxy-media" value="false"/>
+    <param name="proxy-media" value="false"/>
         <param name="bypass-media" value="true"/>
     <!-- Let calls hit the dialplan before selecting codec for the a-leg -->
     

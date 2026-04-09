@@ -82,8 +82,8 @@
     <param name="sip-port" value="5060"/>
     <param name="ext-rtp-ip" value="172.20.6.194"/>
     <param name="ext-sip-ip" value="172.20.6.194"/>
-    <param name="media_timeout" value="300"/>
-    <param name="media_hold_timeout" value="1800"/>
+    <!-- <param name="media_timeout" value="300"/>
+    <param name="media_hold_timeout" value="1800"/> -->
 <param name="NDLB-broken-auth-hash" value="true"/>
 <param name="rtp-rewrite-ssrc" value="false"/>
 <param name="rtp_secure_media" value="false"/>

@@ -1,24 +1,32 @@
 <include>
 <context name="default">
+ <!-- HANDLING RECORDING FROM DJANGO -->
+  <!-- <extension name="record_all_calls" continue="true">
+        <condition field="destination_number" expression=".*">
+          <action application="set" data="RECORD_STEREO=true"/>
+          <action application="set" data="RECORD_MIN_SEC=3"/>
+          <action application="record_session" data="/var/recordings/${strftime(%Y%m%d)}/${uuid}.wav"/>
+        </condition>
+  </extension> --> 
+
   <extension name="tokolab_outbound">
     <condition field="destination_number" expression="^(0[0-9]+)$">
       <action application="set" data="effective_caller_id_number=2138722005"/>
       <action application="set" data="effective_caller_id_name=TOKOLAB"/>
-      <action application="set" data="sip_sticky_contact=true"/>
+      <!-- <action application="set" data="sip_sticky_contact=true"/> -->
       <action application="set" data="absolute_codec_string=PCMU,PCMA"/>
+      <action application="set" data="media_webrtc=false"/>
+      <action application="set" data="rtp_secure_media=false"/>
+      <action application="set" data="inherit_codec=false"/>
       <action application="set" data="bypass_media=false"/>
-      <action application="set" data="disable_rtp_auto_adjust=false"/>
-      <action application="set" data="rtp_patch_media_ip=10.200.173.37"/>
-      <action application="bridge" data="sofia/gateway/tokolab_trunk/$1"/>
+      <action application="set" data="ep_codec_string=PCMU,PCMA"/>
+      <action application="set" data="codec_string=PCMU,PCMA"/>
+      <action application="bridge" data="{origination_caller_id_number=2138722005}sofia/gateway/tokolab_trunk/$1"/>
     </condition>
   </extension>
 
   <extension name="echo_test">
     <condition field="destination_number" expression="^9196$">
-      <action application="set" data="nolocal:sip_sticky_contact=true"/>
-      <action application="export" data="nolocal:sip_sticky_contact=true"/>
-      <action application="set" data="rtp_adv_audio_ip=10.200.173.37"/>
-      <action application="set" data="disable_rtp_auto_adjust=true"/>
       <!-- <action application="set" data="absolute_codec_string=PCMU,PCMA"/> -->
       <!-- <action application="answer"/> -->
       <!-- <action application="set" data="rtp_patch_media_ip=10.200.173.37"/> -->

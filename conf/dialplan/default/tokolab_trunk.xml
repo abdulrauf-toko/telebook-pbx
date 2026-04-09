@@ -14,14 +14,6 @@
 
   <extension name="echo_test">
     <condition field="destination_number" expression="^9196$">
-      <action application="set" data="sip_sticky_contact=true"/>
-      <action application="export" data="sip_sticky_contact=true"/>
-      <action application="set" data="proxy_media=true"/>
-      <action application="set" data="rtp_autoflush_during_bridge=true"/>
-      <action application="set" data="sip_invite_to_uri=sip:$1@10.200.173.37"/>
-      <action application="set" data="sip_route_uri=sip:10.200.173.37"/>
-      <action application="set" data="r_sdp_audio_ip=10.200.173.37"/>
-      <action application="set" data="disable_rtp_auto_adjust=true"/>
       <!-- <action application="set" data="absolute_codec_string=PCMU,PCMA"/> -->
       <!-- <action application="answer"/> -->
       <!-- <action application="set" data="rtp_patch_media_ip=10.200.173.37"/> -->
